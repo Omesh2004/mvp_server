@@ -12,12 +12,13 @@ from flask_pymongo import PyMongo
 import gridfs
 import io
 from datetime import datetime
+import sys
+sys.path.append('./app')
+from app.MusicGenerator import generate_music
 
-from MusicGenerator import generate_music
-
-from GenreAnalysis import AnalyseGenre, InitializeModels
-from InstrumentAnalysis import InstrumentAnalyzer
-from DataExtractor import DataExtractor
+from app.GenreAnalysis import AnalyseGenre, InitializeModels
+from app.InstrumentAnalysis import InstrumentAnalyzer
+from app.DataExtractor import DataExtractor
 #from DataExtractor import AnalyseGenre,InitializeModels
 # Configure logging
 logging.basicConfig(level=logging.INFO)
